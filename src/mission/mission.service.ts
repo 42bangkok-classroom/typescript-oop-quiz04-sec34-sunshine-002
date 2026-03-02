@@ -1,3 +1,6 @@
+import { Injectable } from '@nestjs/common';
+
+@Injectable()
 export class MissionService {
     private readonly missions = [
   { id: 1, codename: 'OPERATION_STORM', status: 'ACTIVE' },
