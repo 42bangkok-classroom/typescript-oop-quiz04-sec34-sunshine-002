@@ -1,12 +1,12 @@
-import {MissionService} from './mission.service'
+import { MissionService } from './mission.service';
 import { Controller, Get } from '@nestjs/common';
 
-@Controller('mission')
+@Controller('missions')
 export class MissionController {
-    constructor(private missionService: MissionService) {}
+  constructor(private missionService: MissionService) {}
 
-    @Get()
-    summary() {
-        return this.missionService.getSummary()
-    }
+  @Get('summary')
+  summary() {
+    return this.missionService.getSummary();
+  }
 }
