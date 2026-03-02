@@ -4,7 +4,7 @@ import {MissionService} from './mission/mission.service'
 
 @Module({
   imports: [],
-  controllers: [],
-  providers: [],
+  controllers: [MissionController],
+  providers: [MissionService],
 })
 export class AppModule {}
