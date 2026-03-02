@@ -11,24 +11,13 @@ export class MissionService {
   { id: 6, codename: 'GHOST_RIDER', status: 'COMPLETED' }
 ];
     getSummary() {
-        let active = 0
-        let completed = 0
-        let failed = 0
-        this.missions.map(s => {
-            if(s.status === "ACTIVE") {
-                active ++
+        const sum : {[key: string]: number} = {}
+            for(const mission of this.missions) {
+                if(sum[mission.status] === null) {
+                    sum[mission.status] = 0
+                }
+                sum[mission.status] ++
             }
-            if(s.status === "COMPLETED") {
-                completed ++
-            }
-            if(s.status === "FAILED") {
-                failed ++
-            }
-        })
-        return {
-            "ACTIVE": active,
-            "COMPLETED": completed,
-            "FAILED": failed
-        }
+            return sum        
     }
 }
